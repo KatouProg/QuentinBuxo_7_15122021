@@ -14,27 +14,43 @@
 
   <body>
 
+    <div id="app">
     <nav>
       <div class="nav-container">
         <div id="logo">
-          <img src="./assets/img/icon-left-font-monochrome-black.png" alt="logo" />
+          <router-link to="/">
+            <img src="./assets/img/icon-left-font-monochrome-black.png" alt="logo" />
+          </router-link>
         </div>
 
         <ul id="icons">
           <li>
-            <i class="fas fa-user"></i>
+            <router-link to="/SignUp">
+              <i class="fas fa-user"></i>
+              <span id="nav-notif"></span>
+            </router-link>
           </li>
           <li>
-            <i class="fas fa-heart"></i>
-            <span id="nav-notif"></span>
+              <router-link to="/UserSettings">
+              <i class="fas fa-user-cog"></i>
+            </router-link>
           </li>
           <li>
-            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-sign-out-alt"></i>
           </li>
         </ul>
       </div>
     </nav>
 
+
+    <router-view></router-view>
+
+
+
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="./assets/js/vue.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
