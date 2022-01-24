@@ -88,6 +88,7 @@ nav .nav-container #icons i:hover {
   max-width: 1250px;
   margin: 0 auto;
   padding-left: 2.4rem;
+  align-items: center;
 }
 @media screen and (max-width: 600px) {
   .home-container {
@@ -109,14 +110,12 @@ nav .nav-container #icons i:hover {
   outline: none;
   border: 2px solid #2eb7eb;
 }
-.home-container .card-cart-container {
-  display: flex;
+.home-container .posts-container {
+  display: grid;
+  align-items: center;
+  flex-direction: column;
 }
-.home-container .card-cart-container .card-container {
-  display: flex;
-  flex-wrap: wrap;
-}
-.home-container .card-cart-container .card-container .card {
+.home-container .posts-container .posts {
   margin: 0.4rem 1rem 0.4rem 0;
   background: white;
   border-radius: 4px;
@@ -127,28 +126,28 @@ nav .nav-container #icons i:hover {
   width: 202px;
 }
 @media screen and (max-width: 600px) {
-  .home-container .card-cart-container .card-container .card {
+  .home-container .posts-container .posts {
     margin-right: 0.2rem;
   }
 }
-.home-container .card-cart-container .card-container .card:hover {
+.home-container .posts-container .posts:hover {
   transform: scale(1.04);
 }
-.home-container .card-cart-container .card-container .card:hover img {
+.home-container .posts-container .posts:hover img {
   transform: scale(1.08);
 }
-.home-container .card-cart-container .card-container .card:hover .card-text {
+.home-container .posts-container .posts:hover .posts-text {
   opacity: 1;
   bottom: 2.3rem;
 }
-.home-container .card-cart-container .card-container .card .img-container {
+.home-container .posts-container .posts .img-container {
   overflow: hidden;
 }
-.home-container .card-cart-container .card-container .card .img-container img {
+.home-container .posts-container .posts .img-container img {
   height: 210px;
   transition: 0.4s ease;
 }
-.home-container .card-cart-container .card-container .card .card-text {
+.home-container .posts-container .posts .posts-text {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -161,45 +160,45 @@ nav .nav-container #icons i:hover {
   height: 75px;
   background: linear-gradient(0deg, white 40%, transparent 100%);
 }
-.home-container .card-cart-container .card-container .card .card-text h3 {
+.home-container .posts-container .posts .posts-text h3 {
   font-size: 1.2rem;
   padding-right: 4px;
 }
-.home-container .card-cart-container .card-container .card .card-text span {
+.home-container .posts-container .posts .posts-text span {
   background: #2eb7eb;
   font-weight: bold;
   padding: 4px 6px;
   color: white;
   border-radius: 4px;
 }
-.home-container .card-cart-container .card-container .card .card-icons {
+.home-container .posts-container .posts .posts-icons {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 40px;
 }
-.home-container .card-cart-container .card-container .card .card-icons i {
+.home-container .posts-container .posts .posts-icons i {
   padding: 3px 5px;
   transition: 0.2s;
   cursor: pointer;
 }
-.home-container .card-cart-container .card-container .card .card-icons i:hover {
+.home-container .posts-container .posts .posts-icons i:hover {
   animation: scaler 0.8s infinite linear;
 }
-.home-container .card-cart-container .card-container .card .card-icons .fa-heart:hover {
+.home-container .posts-container .posts .posts-icons .fa-heart:hover {
   color: rgba(251, 38, 38, 0.5);
 }
-.home-container .card-cart-container .card-container .card .card-icons .fa-shopping-cart {
+.home-container .posts-container .posts .posts-icons .fa-shopping-cart {
   font-size: 16px;
   color: #2eb7eb;
 }
-.home-container .card-cart-container .card-container .card .card-icons .fa-shopping-cart:hover {
+.home-container .posts-container .posts .posts-icons .fa-shopping-cart:hover {
   filter: brightness(125%);
 }
-.home-container .card-cart-container .card-container .card .card-icons .like-container input {
+.home-container .posts-container .posts .posts-icons .like-container input {
   display: none;
 }
-.home-container .card-cart-container .card-container .card .card-icons .like-container input:checked + label i {
+.home-container .posts-container .posts .posts-icons .like-container input:checked + label i {
   color: #fb2626;
   animation: heart 1.3s forwards ease;
 }
@@ -217,7 +216,7 @@ nav .nav-container #icons i:hover {
     transform: scale(1);
   }
 }
-.home-container .card-cart-container .card-container .no-result {
+.home-container .posts-container .posts .no-result {
   margin: 0 4rem 0 0.4rem;
 }
 .home-container .shopping-cart {

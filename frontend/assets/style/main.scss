@@ -90,6 +90,7 @@ nav {
   max-width: 1250px;
   margin: 0 auto;
   padding-left: 2.4rem;
+  align-items: center;
 
   @media screen and (max-width: 600px) {
     padding-left: 0.2rem;
@@ -113,126 +114,124 @@ nav {
     }
   }
 
-  .card-cart-container {
-    display: flex;
+  .posts-container {
+    display:grid;
+    align-items: center;
+    flex-direction: column;
 
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
+    .posts {
+      margin: 0.4rem 1rem 0.4rem 0;
+      background: rgb(255, 255, 255);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0px 6px rgba(51, 51, 51, 0.15);
+      transition: 0.2s ease;
+      width: 202px;
 
-      .card {
-        margin: 0.4rem 1rem 0.4rem 0;
-        background: rgb(255, 255, 255);
-        border-radius: 4px;
+      @media screen and (max-width: 600px) {
+        margin-right: 0.2rem;
+      }
+
+      &:hover {
+        transform: scale(1.04);
+
+        img {
+          transform: scale(1.08);
+        }
+
+        .posts-text {
+          opacity: 1;
+          bottom: 2.3rem;
+        }
+      }
+
+      .img-container {
         overflow: hidden;
-        position: relative;
-        box-shadow: 0 0px 6px rgba(51, 51, 51, 0.15);
-        transition: 0.2s ease;
-        width: 202px;
 
-        @media screen and (max-width: 600px) {
-          margin-right: 0.2rem;
+        img {
+          height: 210px;
+          transition: 0.4s ease;
         }
+      }
+      .posts-text {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.3rem 0.8rem;
+        position: absolute;
+        bottom: 1rem;
+        opacity: 0;
+        transition: 0.6s;
+        width: 100%;
+        height: 75px;
+        background: linear-gradient(0deg, white 40%, transparent 100%);
 
-        &:hover {
-          transform: scale(1.04);
-
-          img {
-            transform: scale(1.08);
-          }
-
-          .card-text {
-            opacity: 1;
-            bottom: 2.3rem;
-          }
+        h3 {
+          font-size: 1.2rem;
+          padding-right: 4px;
         }
-
-        .img-container {
-          overflow: hidden;
-
-          img {
-            height: 210px;
-            transition: 0.4s ease;
-          }
+        span {
+          background: #2eb7eb;
+          font-weight: bold;
+          padding: 4px 6px;
+          color: white;
+          border-radius: 4px;
         }
-        .card-text {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0.3rem 0.8rem;
-          position: absolute;
-          bottom: 1rem;
-          opacity: 0;
-          transition: 0.6s;
-          width: 100%;
-          height: 75px;
-          background: linear-gradient(0deg, white 40%, transparent 100%);
+      }
+      .posts-icons {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 40px;
 
-          h3 {
-            font-size: 1.2rem;
-            padding-right: 4px;
-          }
-          span {
-            background: #2eb7eb;
-            font-weight: bold;
-            padding: 4px 6px;
-            color: white;
-            border-radius: 4px;
+        i {
+          padding: 3px 5px;
+          transition: 0.2s;
+          cursor: pointer;
+
+          &:hover {
+            animation: scaler 0.8s infinite linear;
           }
         }
-        .card-icons {
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-          height: 40px;
+        .fa-heart:hover {
+          color: rgba(251, 38, 38, 0.5);
+        }
+        .fa-shopping-cart {
+          font-size: 16px;
+          color: #2eb7eb;
 
-          i {
-            padding: 3px 5px;
-            transition: 0.2s;
-            cursor: pointer;
-
-            &:hover {
-              animation: scaler 0.8s infinite linear;
-            }
+          &:hover {
+            filter: brightness(125%);
           }
-          .fa-heart:hover {
-            color: rgba(251, 38, 38, 0.5);
-          }
-          .fa-shopping-cart {
-            font-size: 16px;
-            color: #2eb7eb;
+        }
+        .like-container {
+          input {
+            display: none;
 
-            &:hover {
-              filter: brightness(125%);
-            }
-          }
-          .like-container {
-            input {
-              display: none;
+            &:checked + label i {
+              color: rgb(251, 38, 38);
+              animation: heart 1.3s forwards ease;
 
-              &:checked + label i {
-                color: rgb(251, 38, 38);
-                animation: heart 1.3s forwards ease;
-
-                @keyframes heart {
-                  0% {
-                    filter: hue-rotate(0deg);
-                    transform: scale(1);
-                  }
-                  50% {
-                    filter: hue-rotate(-270deg);
-                    transform: scale(1.3);
-                  }
-                  100% {
-                    filter: hue-rotate(0deg);
-                    transform: scale(1);
-                  }
+              @keyframes heart {
+                0% {
+                  filter: hue-rotate(0deg);
+                  transform: scale(1);
+                }
+                50% {
+                  filter: hue-rotate(-270deg);
+                  transform: scale(1.3);
+                }
+                100% {
+                  filter: hue-rotate(0deg);
+                  transform: scale(1);
                 }
               }
             }
           }
         }
       }
+
       .no-result {
         margin: 0 4rem 0 0.4rem;
       }
@@ -282,9 +281,9 @@ nav {
         display: grid;
         grid-template-columns: 50px 1fr;
         grid-template-rows: 60% 40%;
-        grid-template-areas: 
-          'a b'
-          'a c';
+        grid-template-areas:
+          "a b"
+          "a c";
 
         &:after {
           content: "";
@@ -311,7 +310,7 @@ nav {
 
             @keyframes img-scale {
               to {
-                transform: scale(1)
+                transform: scale(1);
               }
             }
           }
@@ -336,7 +335,7 @@ nav {
 
             @keyframes img-scale {
               to {
-                transform: scaleX(1)
+                transform: scaleX(1);
               }
             }
           }
@@ -364,7 +363,7 @@ nav {
               transform: scaleY(0);
 
               @mixin icon-anim($delay) {
-                animation: icon .5s ease forwards;
+                animation: icon 0.5s ease forwards;
                 animation-delay: $delay;
 
                 @keyframes icon {
@@ -373,14 +372,14 @@ nav {
                   }
                 }
               }
-              &:nth-child(1){
-                @include icon-anim(.2s);
+              &:nth-child(1) {
+                @include icon-anim(0.2s);
               }
-              &:nth-child(2){
-                @include icon-anim(.4s);
+              &:nth-child(2) {
+                @include icon-anim(0.4s);
               }
-              &:nth-child(3){
-                @include icon-anim(.6s);
+              &:nth-child(3) {
+                @include icon-anim(0.6s);
               }
             }
 
@@ -391,12 +390,12 @@ nav {
               background: white;
               border-radius: 50%;
               color: #2eb7eb;
-              transition: .3s ease;
+              transition: 0.3s ease;
 
               &:hover {
                 background: #222;
                 color: #2eb7eb;
-              }              
+              }
             }
           }
         }
@@ -447,7 +446,7 @@ nav {
   .cart-anim {
     &-enter-active,
     &-leave-active {
-      transition: 1.3s cubic-bezier(.23,.66,.08,.93);
+      transition: 1.3s cubic-bezier(0.23, 0.66, 0.08, 0.93);
       transform: translateX(0px);
     }
     &-enter,
@@ -457,16 +456,16 @@ nav {
     }
   }
   .item-anim {
-    &-enter-active, 
+    &-enter-active,
     &-leave-active {
       opacity: 1;
-      transition: .8s;
+      transition: 0.8s;
     }
     &-enter,
     &-leave-to {
       opacity: 0;
       transform: translateY(100px);
-      transition: .7s;
+      transition: 0.7s;
     }
   }
 }
